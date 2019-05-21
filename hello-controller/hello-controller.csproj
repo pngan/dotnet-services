@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\hello-grpc\Protos\greet.proto">
+    <Protobuf Include="..\hello-shared\Protos\greet.proto">
       <Link>Protos\greet.proto</Link>
     </Protobuf>
   </ItemGroup>
