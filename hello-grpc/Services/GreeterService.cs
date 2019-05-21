@@ -17,4 +17,14 @@ namespace hello_grpc
             });
         }
     }
+    public class GreeterService1 : Greeter1.Greeter1Base
+    {
+        public override Task<HelloReply> SayHola(HelloRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new HelloReply
+            {
+                Message = "Hola " + request.Name
+            });
+        }
+    }
 }

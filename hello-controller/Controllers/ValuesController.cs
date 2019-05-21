@@ -18,11 +18,11 @@ namespace hello_controller.Controllers
         {
             // The port number here must match the port of the gRPC server
             var channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
-            var client = new Greeter.GreeterClient(channel);
+            var client = new Greeter1.Greeter1Client(channel);
 
-            var reply = await client.SayHelloAsync(
-                                          new HelloRequest { Name = "GreeterClient" });
-            Console.WriteLine("Greeting: " + reply.Message);
+            var reply = await client.SayHolaAsync(
+                                          new HelloRequest { Name = "Greeter1Client" });
+            Console.WriteLine("Greeting1: " + reply.Message);
 
             await channel.ShutdownAsync();
             return new string[] { reply.Message };
