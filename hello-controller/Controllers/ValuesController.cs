@@ -17,7 +17,7 @@ namespace hello_controller.Controllers
         public async Task<ActionResult<IEnumerable<string>>> Get()
         {
             // The port number here must match the port of the gRPC server
-            var channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
+            var channel = new Channel("hello-grpc:80", ChannelCredentials.Insecure);
             var client = new Greeter1.Greeter1Client(channel);
 
             var reply = await client.SayHolaAsync(
